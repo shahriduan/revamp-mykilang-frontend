@@ -9,7 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "js-loading-overlay": "^1.2.0",
+    "node-snackbar": "^0.1.16",
     "pinia": "^2.1.7",
+    "sweetalert2": "^11.12.1",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
