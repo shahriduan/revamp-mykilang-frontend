@@ -1,6 +1,6 @@
 export default class ConstantConfig {
     // Key value inside local storage
-    static localStorageKey() {
+    static get localStorageKey() {
         return {
             token: 'token',
             permissionStore: 'permissionStore',
@@ -10,7 +10,7 @@ export default class ConstantConfig {
     }
 
     // Enum value inside table users column user_type
-    static userType() {
+    static get userType() {
         return {
             client: 'Client',
             hq: 'HQ'

@@ -9,7 +9,7 @@
 </template>
 
 <style lang="css" scoped>
-.display-middle{
+.display-middle {
     position: absolute;
     top: 50%;
     left: 50%;

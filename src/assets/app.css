@@ -7,7 +7,7 @@
 /***** GENERAL *****/
 @font-face {
   font-family: proxima-soft;
-  src: url(../../public/fonts/ProximaSoft-Regular.ttf);
+  src: url(/fonts/ProximaSoft-Regular.ttf);
 }
 body {
   font-family: proxima-soft;

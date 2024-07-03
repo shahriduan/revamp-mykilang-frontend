@@ -1,4 +1,4 @@
-import ConstantConfig from '@/helpers/ConstantConfig'
+import ConstantConfig from '@/config/ConstantConfig'
 
 function can(accessable) {
     var json = JSON.parse(localStorage.getItem(ConstantConfig.localStorageKey.permissionStore))
