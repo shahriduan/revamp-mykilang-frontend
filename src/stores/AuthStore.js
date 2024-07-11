@@ -1,12 +1,17 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import ConstantConfig from '@/config/ConstantConfig'
 import { AES, enc } from 'crypto-js'
+import ConstantConfig from '@/config/ConstantConfig'
 
 export const useAuthStore = defineStore('authStore', () => {
     const key = ConstantConfig.localStorageKey
 
     var token = ref(localStorage.getItem(key.token))
+
+    /**
+     * Current module code
+     */
+    var currentModule = ref(localStorage.getItem(key.currentModule))
 
     /**
      * Data about user profile
@@ -28,17 +33,26 @@ export const useAuthStore = defineStore('authStore', () => {
         token.value = localStorage.getItem(key.token)
     }
 
-    // Data about user for client user
+    /**
+     * Store data about user profile
+     */
     function storeUserProfile(data) {
         var encryptUserProfile = AES.encrypt(JSON.stringify(data), 'VISI@MyKilang').toString();
         localStorage.setItem(key.userProfile, encryptUserProfile)
     }  
 
+    function storeCurrentModule(moduleCode) {
+        currentModule.value = moduleCode
+        localStorage.setItem(ConstantHelper.localStorageKey.currentModule, moduleCode)
+    }
+
     return {
         token,
+        currentModule,
         userProfile,
         storeAuth,
         removeAuth,
-        storeUserProfile
+        storeUserProfile,
+        storeCurrentModule
     }
 })

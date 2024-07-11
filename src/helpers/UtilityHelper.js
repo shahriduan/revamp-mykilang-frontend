@@ -43,4 +43,61 @@ export default class UtilityHelper {
 
         return filter
     }
+
+    ucwords(str) {
+        var str = str.toLowerCase()
+        return str.replace(/\b\w/g, (match) => match.toUpperCase()) // Converts the first character of each word in a string to uppercase.
+    }
+
+    generateRandomColorCode() {
+        // Generate random values for red, green, and blue components
+        var red = Math.floor(Math.random() * 256)
+        var green = Math.floor(Math.random() * 256)
+        var blue = Math.floor(Math.random() * 256)
+      
+        var stringRed = red.toString(16)
+        var stringGreen = green.toString(16)
+        var stringBlue = blue.toString(16)
+
+        stringRed = stringRed.length < 2 ? stringRed + '0' : stringRed
+        stringGreen = stringGreen.length < 2 ? stringGreen + '0' : stringGreen
+        stringBlue = stringBlue.length < 2 ? stringBlue + '0' : stringBlue
+
+        // Convert the values to hexadecimal and format the color code
+        var colorCode = "#" + stringRed + stringGreen + stringBlue
+
+        return colorCode;
+    }
+
+    listRandomColorCode(totalColorNeeded) {
+        var baseColor = [
+            getComputedStyle(document.documentElement).getPropertyValue('--falcon-primary'),
+            getComputedStyle(document.documentElement).getPropertyValue('--falcon-info'),
+            getComputedStyle(document.documentElement).getPropertyValue('--falcon-success'),
+            getComputedStyle(document.documentElement).getPropertyValue('--falcon-danger'),
+            getComputedStyle(document.documentElement).getPropertyValue('--falcon-warning'),
+        ]
+
+        var totalBaseColor = baseColor.length
+
+        var additionalColor = []
+
+        // Generate additional color code
+        if (totalBaseColor < totalColorNeeded) {
+            var totalAdditionalColorNeedToCreate = totalColorNeeded - totalBaseColor
+
+            for (let index = 0; index < totalAdditionalColorNeedToCreate; index++) {
+                // const element = array[index];
+                additionalColor.push(this.generateRandomColorCode())
+            }
+            
+        }
+
+        var combineColor = [
+            ...baseColor,
+            ...additionalColor
+        ]
+
+        return combineColor
+    }
 }
