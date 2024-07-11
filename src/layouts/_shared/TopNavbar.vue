@@ -21,10 +21,10 @@
                 </a>
                 <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0" aria-labelledby="navbarDropdownUser">
                     <div class="bg-white dark__bg-1000 rounded-2 py-2">
-                        <router-link class="dropdown-item" :to="{ name: 'account.change_email' }">
+                        <router-link class="dropdown-item" :to="{ name: 'console:account.change_email' }">
                             <i class="fas fa-user me-2"></i> My Account
                         </router-link>
-                        <router-link class="dropdown-item" :to="{ name: 'logout' }">
+                        <router-link class="dropdown-item" :to="{ name: 'console:logout' }">
                             <i class="fas fa-sign-out-alt me-2"></i> Sign Out
                         </router-link>
                     </div>

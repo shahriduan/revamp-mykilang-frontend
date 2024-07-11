@@ -2,8 +2,8 @@
     <UserManagementPills />
     <x-content-header 
         title="Reset Password" class="mb-3"
-        :breadcrumbs="[{ route: { name: 'user.index' }, name: 'User List' }, { name: $route.query.fullname ?? 'Reset Password'  }]"
-        :previous-route="{ name: 'user.index' }"
+        :breadcrumbs="[{ route: { name: 'console:user.index' }, name: 'User List' }, { name: $route.query.fullname ?? 'Reset Password'  }]"
+        :previous-route="{ name: 'console:user.index' }"
     />
     <div class="card mt-3">
         <div class="card-body">

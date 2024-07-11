@@ -2,21 +2,21 @@
     <x-content-header v-if="authStore.userProfile.user_type == ConstantConfig.userType.client"
         title="Unpair Lincense Key"
         :breadcrumbs="[
-            { route: { name: 'license_key.index' }, name: 'License Key' },
+            { route: { name: 'console:license_key.index' }, name: 'License Key' },
             { name: companyName + ' Licenses' },
             { name: 'Unpair ' + labelName },
         ]"
-        :previous-route="{ name: 'license_key.index' }"
+        :previous-route="{ name: 'console:license_key.index' }"
     />
 
     <x-content-header v-if="authStore.userProfile.user_type == ConstantConfig.userType.hq"
         title="Unpair Lincese Key"
         :breadcrumbs="[
-            { route: { name: 'client_account.index' }, name: 'Client Accounts' },
-            { route: { name: 'client_account.license_key.index', params: { company: $route.params.company }, query: { name: $route.query.name } }, name: $route.query.name + ' Licenses' },
+            { route: { name: 'console:client_account.index' }, name: 'Client Accounts' },
+            { route: { name: 'console:client_account.license_key.index', params: { company: $route.params.company }, query: { name: $route.query.name } }, name: $route.query.name + ' Licenses' },
             { name: 'Unpair ' + labelName },
         ]"
-        :previous-route="{ name: 'client_account.license_key.index', params: { company: $route.params.company }, query: { name: $route.query.name } }"
+        :previous-route="{ name: 'console:client_account.license_key.index', params: { company: $route.params.company }, query: { name: $route.query.name } }"
     />
 
     <div class="card mt-3">
@@ -116,7 +116,7 @@ async function unpairLicenseKey() {
     .then(function(response) {
         if (response.data.status == true) {
             snackbar('License key unpair successfully.')
-            router.push({ name: 'license_key.index' })
+            router.push({ name: 'console:license_key.index' })
         } else {
             if (form.password.error) {
                 snackbar(response.data.message)

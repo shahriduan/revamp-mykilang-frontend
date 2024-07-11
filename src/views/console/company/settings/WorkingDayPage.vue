@@ -9,7 +9,7 @@
                     </h5>
                 </div>
                 <div class="col-auto">
-                    <router-link class="btn btn-falcon-default btn-sm me-2" :to="{ name: 'factory.list'}">
+                    <router-link class="btn btn-falcon-default btn-sm me-2" :to="{ name: 'console:factory.list'}">
                         Create New Factory
                     </router-link>
                 </div>

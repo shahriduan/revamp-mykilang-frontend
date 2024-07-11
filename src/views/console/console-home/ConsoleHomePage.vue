@@ -67,7 +67,7 @@
                         </div>
                     </div> -->
                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 mb-4 text-center" v-if="$can(['user.list', 'role.list'])">
-                        <router-link :to="$can('user.list') ? { name: 'user.index' } : { name: 'role.index' }" style="text-decoration: none">
+                        <router-link :to="$can('user.list') ? { name: 'console:user.index' } : { name: 'console:role.index' }" style="text-decoration: none">
                             <div class="card border shadow-none h-100">
                                 <div class="card-img-top mt-2">
                                     <img class="img-medium" src="/img/illustrations/management.png" />
@@ -80,7 +80,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 mb-4 text-center">
                         <div class="card border shadow-none h-100">
-                            <router-link :to="{ name: 'my_company' }" style="text-decoration: none">
+                            <router-link :to="{ name: 'console:my_company' }" style="text-decoration: none">
                                 <div class="card-img-top mt-2">
                                     <img class="img-medium" src="/img/illustrations/location-pin.png" alt="Company" />
                                 </div>
@@ -92,7 +92,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 mb-4 text-center">
                         <div class="card border shadow-none h-100">
-                            <router-link :to="{ name: 'self_installation' }" style="text-decoration: none">
+                            <router-link :to="{ name: 'console:self_installation' }" style="text-decoration: none">
                                 <div class="card-img-top mt-2">
                                     <img class="img-medium" src="/img/illustrations/easy-installation.png" alt="Guidelines" />
                                 </div>
@@ -159,10 +159,10 @@ onMounted(async () => {
                 if (item.web_app_access == true) {
                     var redirect_url = AppConfig.moduleDomain + item.main_landing_url
                 } else {
-                    var redirect_url = router.resolve({ name: 'platform_not_available', query: { module: item.module_name } })
+                    var redirect_url = router.resolve({ name: 'console:platform_not_available', query: { module: item.module_name } })
                 }
             } else {
-                var redirect_url = router.resolve({ name: 'subscribe_module', params: { module: item.id } })
+                var redirect_url = router.resolve({ name: 'console:subscribe_module', params: { module: item.id } })
             }
 
             item['redirect_url'] = redirect_url

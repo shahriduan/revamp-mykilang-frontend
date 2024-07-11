@@ -1,8 +1,8 @@
 <template>
     <x-content-header 
         :title="$route.params.action == 'create' ? 'New Subsidiary' : 'Edit Subsidiary'" class="mb-3"
-        :breadcrumbs="[{ route: { name: 'my_company' }, name: 'My Company' }, { name: $route.params.action == 'create' ? 'New Subsidiary' : breadcrumbTitle }]"
-        :previous-route="{ name: 'my_company' }"
+        :breadcrumbs="[{ route: { name: 'console:my_company' }, name: 'My Company' }, { name: $route.params.action == 'create' ? 'New Subsidiary' : breadcrumbTitle }]"
+        :previous-route="{ name: 'console:my_company' }"
     />
 
     <Circlespinner v-if="contentLoader == true" />

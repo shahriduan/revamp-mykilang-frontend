@@ -10,17 +10,17 @@
 
     <ul class="nav nav-pills mb-3">
         <li class="nav-item">
-            <router-link class="nav-link py-2" :class="{ active: ['user.index', 'user.form', 'user.delete_user', 'user.reset_password'].includes($route.name) }" :to="{ name: 'user.index' }" v-if="$can('user.list')">
+            <router-link class="nav-link py-2" :class="{ active: ['console:user.index', 'console:user.form', 'console:user.delete_user', 'console:user.reset_password'].includes($route.name) }" :to="{ name: 'console:user.index' }" v-if="$can('user.list')">
                 <i class="bi bi-people fa-lg me-2"></i> Users
             </router-link>
         </li>
         <li class="nav-item">
-            <router-link class="nav-link py-2" :class="{ active: ['role.index', 'role.form'].includes($route.name) }" :to="{ name: 'role.index' }" v-if="$can('role.list')">
+            <router-link class="nav-link py-2" :class="{ active: ['console:role.index', 'console:role.form'].includes($route.name) }" :to="{ name: 'console:role.index' }" v-if="$can('role.list')">
                 <i class="bi bi-shield-shaded fa-lg me-2"></i> Roles and Permissions (Cloud Console)
             </router-link>
         </li>
         <li class="nav-item">
-            <router-link class="nav-link py-2" :class="{ active: ['ot_role.index', 'ot_role.form'].includes($route.name) }" :to="{ name: 'ot_role.index' }" v-if="$can('role.list')">
+            <router-link class="nav-link py-2" :class="{ active: ['console:ot_role.index', 'console:ot_role.form'].includes($route.name) }" :to="{ name: 'console:ot_role.index' }" v-if="$can('role.list')">
                 <i class="bi bi-shield-shaded fa-lg me-2"></i> Roles and Permissions (On-premise)
             </router-link>
         </li>

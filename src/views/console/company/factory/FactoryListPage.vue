@@ -1,6 +1,6 @@
 <template>
     <x-content-header title="Factories" class="mb-3">
-        <router-link :to="{ name: 'factory.form', params: { action: 'create' } }" class="btn btn-outline-dark" v-if="$can('company.manage_factory')">
+        <router-link :to="{ name: 'console:factory.form', params: { action: 'create' } }" class="btn btn-outline-dark" v-if="$can('company.manage_factory')">
             <i class="fas fa-plus me-1"></i> New Factory
         </router-link>
     </x-content-header>
@@ -21,7 +21,7 @@
                     <tbody>
                         <tr v-for="factory in factories" v-if="factories.length > 0">
                             <td>
-                                <router-link :to="{ name: 'factory.form', params: { action: 'edit', factory: factory.id } }" style="text-decoration: none">
+                                <router-link :to="{ name: 'console:factory.form', params: { action: 'edit', factory: factory.id } }" style="text-decoration: none">
                                     {{ factory.name }}
                                 </router-link>
                             </td>

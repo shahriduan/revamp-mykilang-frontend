@@ -2,8 +2,8 @@
     <UserManagementPills />
     <x-content-header
         :title="$route.params.action == 'create' ? 'Create New User' : 'Edit User'" class="mb-3"
-        :breadcrumbs="[{ route: { name: 'user.index' }, name: 'User List' }, { name: $route.params.action == 'create' ? 'New User' : breadcrumbTitle }]"
-        :previous-route="{ name: 'user.index' }"
+        :breadcrumbs="[{ route: { name: 'console:user.index' }, name: 'User List' }, { name: $route.params.action == 'create' ? 'New User' : breadcrumbTitle }]"
+        :previous-route="{ name: 'console:user.index' }"
     />
     <Circlespinner class="mt-5" v-if="contentLoader == true" />
     <div v-if="contentLoader == false">
@@ -17,11 +17,11 @@
                             </h5>
                         </div>
                         <div class="col-auto">
-                            <router-link class="btn btn-falcon-default btn-sm me-2" :to="{ name: 'role.form', params: { action: 'create' } }">
+                            <router-link class="btn btn-falcon-default btn-sm me-2" :to="{ name: 'console:role.form', params: { action: 'create' } }">
                                 Create New IT Role
                             </router-link>
                             <span>or</span>
-                            <router-link class="btn btn-falcon-default btn-sm ms-2 me-2" :to="{ name: 'ot_role.form', params: { action: 'create' } }">
+                            <router-link class="btn btn-falcon-default btn-sm ms-2 me-2" :to="{ name: 'console:ot_role.form', params: { action: 'create' } }">
                                 Create New OT Role
                             </router-link>
                         </div>
@@ -37,7 +37,7 @@
                             </h5>
                         </div>
                         <div class="col-auto">
-                            <router-link class="btn btn-falcon-default btn-sm me-2" :to="{ name: 'factory.list'}">
+                            <router-link class="btn btn-falcon-default btn-sm me-2" :to="{ name: 'console:factory.list'}">
                                 Create New Factory
                             </router-link>
                         </div>
@@ -95,7 +95,7 @@
                                 <div class="text-danger small">{{ role.error }}</div>
                                 <div class="small" v-if="roleList.length == 0">
                                     You don't have IT role created.
-                                    <router-link :to="{ name: 'role.index' }" class="text-primary" style="text-decoration: underline">
+                                    <router-link :to="{ name: 'console:role.index' }" class="text-primary" style="text-decoration: underline">
                                         Create here.
                                     </router-link>
                                 </div>
@@ -115,7 +115,7 @@
                                 <div class="text-danger small">{{ ot_role.error }}</div>
                                 <div class="small" v-if="otRoleList.length == 0">
                                     You don't have OT role created.
-                                    <router-link :to="{ name: 'ot_role.index' }" class="text-primary" style="text-decoration: underline">
+                                    <router-link :to="{ name: 'console:ot_role.index' }" class="text-primary" style="text-decoration: underline">
                                         Create here.
                                     </router-link>
                                 </div>

@@ -18,7 +18,7 @@
             <div class="navbar-vertical-content scrollbar">
                 <ul class="navbar-nav flex-column mb-3" id="navbarVerticalNav">
                     <li class="nav-item">
-                        <router-link class="nav-link sidebar-menu" :class="{ active: ['home'].includes($route.name) }" :to="{ name: 'home' }" role="button">
+                        <router-link class="nav-link sidebar-menu" :class="{ active: ['backoffice:home'].includes($route.name) }" :to="{ name: 'backoffice:home' }" role="button">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="fas fa-home"></span>
@@ -26,7 +26,7 @@
                                 <span class="nav-link-text ps-1">Home</span>
                             </div>
                         </router-link>
-                        <router-link class="nav-link sidebar-menu" :class="{ active: ['client_account.index', 'client_account.form', 'client_account.license_key.index', 'client_account.license_key.form'].includes($route.name) }" :to="{ name: 'client_account.index' }" role="button" v-if="$can('client_account.list')">
+                        <router-link class="nav-link sidebar-menu" :class="{ active: ['console:client_account.index', 'console:client_account.form', 'console:client_account.license_key.index', 'console:client_account.license_key.form'].includes($route.name) }" :to="{ name: 'console:client_account.index' }" role="button" v-if="$can('client_account.list')">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="fa-solid fa-building" style="margin-left: 3px"></span>
@@ -34,7 +34,7 @@
                                 <span class="nav-link-text ps-1">Client Accounts</span>
                             </div>
                         </router-link>
-                        <router-link class="nav-link sidebar-menu" :class="{ active: ['user.index', 'role.index', 'role.form', 'ot_role.index', 'ot_role.form', 'user.form', 'user.delete_user', 'user.reset_password'].includes($route.name) }" :to="$can('user.list') ? { name: 'user.index' } : { name: 'role.index' }" role="button" v-if="$can(['user.list', 'role.list'])">
+                        <router-link class="nav-link sidebar-menu" :class="{ active: ['console:user.index', 'console:role.index', 'console:role.form', 'console:ot_role.index', 'console:ot_role.form', 'console:user.form', 'console:user.delete_user', 'console:user.reset_password'].includes($route.name) }" :to="$can('user.list') ? { name: 'console:user.index' } : { name: 'console:role.index' }" role="button" v-if="$can(['user.list', 'role.list'])">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="fas fa-users"></span>
@@ -42,7 +42,7 @@
                                 <span class="nav-link-text ps-1">User Management</span>
                             </div>
                         </router-link>
-                        <router-link class="nav-link sidebar-menu" :class="{ active: ['package.list'].includes($route.name) }" :to="{ name: 'package.list' }" role="button">
+                        <router-link class="nav-link sidebar-menu" :class="{ active: ['console:package.list'].includes($route.name) }" :to="{ name: 'console:package.list' }" role="button">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="fa-solid fa-box"></span>
@@ -50,7 +50,7 @@
                                 <span class="nav-link-text ps-1">Packages</span>
                             </div>
                         </router-link>
-                        <router-link v-if="AppConfig.appEnv !== 'production'" class="nav-link sidebar-menu" :class="{ active: ['access_client_module.list'].includes($route.name) }" :to="{ name: 'access_client_module.list' }" role="button">
+                        <router-link v-if="AppConfig.appEnv !== 'production'" class="nav-link sidebar-menu" :class="{ active: ['console:access_client_module.list'].includes($route.name) }" :to="{ name: 'console:access_client_module.list' }" role="button">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="bi bi-person-workspace"></span>
@@ -66,7 +66,7 @@
                                 <hr class="mb-0 navbar-vertical-divider" />
                             </div>
                         </div>
-                        <router-link class="nav-link sidebar-menu" :to="{ name: 'system_module.index' }" :class="{ active: ['system_module.index', 'system_module.config'].includes($route.name) }" role="button" v-if="$can('platform_settings.manage_module_configuration')">
+                        <router-link class="nav-link sidebar-menu" :to="{ name: 'console:system_module.index' }" :class="{ active: ['console:system_module.index', 'console:system_module.config'].includes($route.name) }" role="button" v-if="$can('platform_settings.manage_module_configuration')">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="fa-solid fa-code"></span>
@@ -74,7 +74,7 @@
                                 <span class="nav-link-text ps-1">Module Configuration</span>
                             </div>
                         </router-link>
-                        <router-link class="nav-link sidebar-menu" :to="{ name: 'software.index' }" :class="{ active: ['software.index', 'software.form'].includes($route.name) }" role="button" v-if="$can('platform_settings.manage_software_version')">
+                        <router-link class="nav-link sidebar-menu" :to="{ name: 'console:software.index' }" :class="{ active: ['console:software.index', 'console:software.form'].includes($route.name) }" role="button" v-if="$can('platform_settings.manage_software_version')">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="fa-solid fa-desktop"></span>
@@ -90,7 +90,7 @@
                                 <span class="nav-link-text ps-1">Error Logs</span>
                             </div>
                         </a>
-                        <router-link class="nav-link sidebar-menu" :to="{ name: 'global_setting.index' }" :class="{ active: ['global_setting.index'].includes($route.name) }" role="button">
+                        <router-link class="nav-link sidebar-menu" :to="{ name: 'console:global_setting.index' }" :class="{ active: ['console:global_setting.index'].includes($route.name) }" role="button">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="bi bi-globe"></span>
@@ -98,7 +98,7 @@
                                 <span class="nav-link-text ps-1">Global Setting</span>
                             </div>
                         </router-link>
-                        <router-link class="nav-link sidebar-menu" :to="{ name: 'user_session.active_sessions' }" :class="{ active: ['user_session.active_sessions'].includes($route.name) }" role="button">
+                        <router-link class="nav-link sidebar-menu" :to="{ name: 'console:user_session.active_sessions' }" :class="{ active: ['console:user_session.active_sessions'].includes($route.name) }" role="button">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="bi bi-person-lines-fill"></span>

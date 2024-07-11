@@ -26,7 +26,7 @@
                                 <span class="nav-link-text ps-1">BACK TO CONSOLE HOME</span>
                             </div>
                         </router-link>
-                        <router-link class="nav-link sidebar-menu" :class="{ active: ['my_company', 'subsidiary.form'].includes($route.name) }" :to="{ name: 'my_company' }" role="button">
+                        <router-link class="nav-link sidebar-menu" :class="{ active: ['console:my_company', 'console:subsidiary.form'].includes($route.name) }" :to="{ name: 'console:my_company' }" role="button">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="fa-solid fa-building"></span>
@@ -35,7 +35,7 @@
                             </div>
                         </router-link>
 
-                        <router-link class="nav-link sidebar-menu" :class="{ active: ['factory.list', 'factory.form'].includes($route.name) }" :to="{ name: 'factory.list' }" role="button">
+                        <router-link class="nav-link sidebar-menu" :class="{ active: ['console:factory.list', 'console:factory.form'].includes($route.name) }" :to="{ name: 'console:factory.list' }" role="button">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="fa-solid fa-industry"></span>
@@ -44,7 +44,7 @@
                             </div>
                         </router-link>
 
-                        <router-link class="nav-link sidebar-menu" :class="{ active: ['license_key.index'].includes($route.name) }" :to="{ name: 'license_key.index' }" role="button">
+                        <router-link class="nav-link sidebar-menu" :class="{ active: ['license_key.index'].includes($route.name) }" :to="{ name: 'console:license_key.index' }" role="button">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="fas fa-clipboard-check"></span>
@@ -53,7 +53,7 @@
                             </div>
                         </router-link>
                         
-                        <router-link class="nav-link sidebar-menu" :class="{ active: 'working-days'.includes($route.name) }" :to="{ name: 'working-days' }" role="button">
+                        <router-link class="nav-link sidebar-menu" :class="{ active: 'working-days'.includes($route.name) }" :to="{ name: 'console:working_days' }" role="button">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="bi bi-tools"></span>

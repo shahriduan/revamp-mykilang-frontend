@@ -19,7 +19,7 @@
         <div class="col-md-4">
             <div class="row d-flex align-items-center justify-content-center" v-if="dataPackage && dataPackage.length > 0">
                 <div class="col-3 col-md-5 text-end" v-show="$can('user.add')">
-                    <router-link :class="authStore.userProfile.user_type == ConstantConfig.userType.client && totalUsers >= numberOfUser ? 'disabled' : ''" :to="{ name: 'user.form', params: { action: 'create' } }" class="btn btn-outline-dark px-3">
+                    <router-link :class="authStore.userProfile.user_type == ConstantConfig.userType.client && totalUsers >= numberOfUser ? 'disabled' : ''" :to="{ name: 'console:user.form', params: { action: 'create' } }" class="btn btn-outline-dark px-3">
                         <i class="fas fa-plus me-1"></i>New User
                     </router-link>
                 </div>
@@ -39,7 +39,7 @@
             </div>
             <div class="row d-flex align-items-center justify-content-center" v-else>
                 <div class="col-12 text-end" v-show="$can('user.add')">
-                    <router-link :class="authStore.userProfile.user_type == ConstantConfig.userType.client && totalUsers >= numberOfUser ? 'disabled' : ''" :to="{ name: 'user.form', params: { action: 'create' } }" class="btn btn-outline-dark px-3">
+                    <router-link :class="authStore.userProfile.user_type == ConstantConfig.userType.client && totalUsers >= numberOfUser ? 'disabled' : ''" :to="{ name: 'console:user.form', params: { action: 'create' } }" class="btn btn-outline-dark px-3">
                         <i class="fas fa-plus me-1"></i>New User
                     </router-link>
                 </div>
@@ -97,13 +97,13 @@
                                             <span class="fas fa-ellipsis fa-2x"></span>
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="dropdown-active-user">
-                                            <router-link v-if="$can('user.edit')" class="dropdown-item" :to="{ name: 'user.form', params: { action: 'edit', user: user.id } }">
+                                            <router-link v-if="$can('user.edit')" class="dropdown-item" :to="{ name: 'console:user.form', params: { action: 'edit', user: user.id } }">
                                                 <i class="bi bi-pencil fa-lg me-2"></i> Edit
                                             </router-link>
-                                            <router-link v-if="$can('user.delete')" class="dropdown-item" :to="{ name: 'user.delete_user', params: { user: user.id } }">
+                                            <router-link v-if="$can('user.delete')" class="dropdown-item" :to="{ name: 'console:user.delete_user', params: { user: user.id } }">
                                                 <i class="bi bi-trash fa-lg me-2"></i> Delete
                                             </router-link>
-                                            <router-link v-if="$can('user.reset_password')" class="dropdown-item" :to="{ name: 'user.reset_password', params: { user: user.id }, query: { fullname: user.fullname } }">
+                                            <router-link v-if="$can('user.reset_password')" class="dropdown-item" :to="{ name: 'console:user.reset_password', params: { user: user.id }, query: { fullname: user.fullname } }">
                                                 <i class="bi bi-lock fa-lg me-2"></i> Reset Password
                                             </router-link>
                                         </div>

@@ -3,7 +3,7 @@
         <div v-if="$route.meta.permission == undefined || $can($route.meta.permission)">
             <router-view></router-view>
         </div>
-        <div v-else>
+        <div style="margin-top: 200px" v-else>
             <Forbidden />
         </div>
     </component>

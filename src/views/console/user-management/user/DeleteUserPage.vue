@@ -2,8 +2,8 @@
     <UserManagementPills />
     <x-content-header 
         title="Delete User" class="mb-3"
-        :breadcrumbs="[{ route: { name: 'user.index' }, name: 'User List' }, { name: fullname }]"
-        :previous-route="{ name: 'user.index' }"
+        :breadcrumbs="[{ route: { name: 'console:user.index' }, name: 'User List' }, { name: fullname }]"
+        :previous-route="{ name: 'console:user.index' }"
     />
     <div class="card mt-3">
         <div class="card-body">
@@ -59,7 +59,7 @@ async function submitDeleteUser() {
     await window.axios.post(apiRoute({ name: 'api:user_management.delete_user', params: { user: currentRoute.params.user } }))
         .then(function(response) {
             snackbar(response.data.message)
-            router.replace({ name: 'user.index' })
+            router.replace({ name: 'console:user.index' })
         })
         .catch(function(error) {
             snackbar('Unexpected Error')

@@ -144,7 +144,7 @@ async function authenticate() {
             const authStore = useAuthStore()
             authStore.storeAuth(response.data.data.token)
 
-            router.push({ name: 'system_start' })
+            router.push({ name: 'console:system_start' })
         } else {
             if (response.data.error.username != undefined) {
                 form.username.isInvalid = true

@@ -2,16 +2,16 @@
     <div class="card">
         <div class="card-body py-0 px-0">
             <div class="list-group list-group-light list-group-small">
-                <router-link :to="{ name: 'account.change_email' }" class="list-group-item list-group-item-action px-3" :class="{ active: $route.name == 'account.change_email' }">
+                <router-link :to="{ name: 'console:account.change_email' }" class="list-group-item list-group-item-action px-3" :class="{ active: $route.name == 'console:account.change_email' }">
                     <i class="bi bi-envelope fa-lg me-3"></i> Change Email
                 </router-link>
-                <router-link :to="{ name: 'account.change_password' }" class="list-group-item list-group-item-action px-3" :class="{ active: $route.name == 'account.change_password' }">
+                <router-link :to="{ name: 'console:account.change_password' }" class="list-group-item list-group-item-action px-3" :class="{ active: $route.name == 'console:account.change_password' }">
                     <i class="bi bi-lock fa-lg me-3"></i> Change Password
                 </router-link>
-                <router-link :to="{ name: 'account.system_setting' }" class="list-group-item list-group-item-action px-3" :class="{ active: $route.name == 'account.system_setting' }">
+                <router-link :to="{ name: 'console:account.system_setting' }" class="list-group-item list-group-item-action px-3" :class="{ active: $route.name == 'console:account.system_setting' }">
                     <i class="bi bi-gear fa-lg me-3"></i> System Settings
                 </router-link>
-                <router-link :to="{ name: 'account.security_check' }" class="list-group-item list-group-item-action px-3" :class="{ active: $route.name == 'account.security_check' }">
+                <router-link :to="{ name: 'console:account.security_check' }" class="list-group-item list-group-item-action px-3" :class="{ active: $route.name == 'console:account.security_check' }">
                     <i class="bi bi-shield-lock fa-lg me-3"></i> Security Checks
                 </router-link>
             </div>

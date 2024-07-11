@@ -1,8 +1,8 @@
 <template>
     <x-content-header
         :title="$route.params.action == 'create' ? 'New Factory' : 'Edit Factory'" class="mb-3"
-        :breadcrumbs="[{ route: { name: 'factory.list' }, name: 'Factory List' }, { name: $route.params.action == 'create' ? 'New Factory' : breadcrumbTitle }]"
-        :previous-route="{ name: 'factory.list' }"
+        :breadcrumbs="[{ route: { name: 'console:factory.list' }, name: 'Factory List' }, { name: $route.params.action == 'create' ? 'New Factory' : breadcrumbTitle }]"
+        :previous-route="{ name: 'console:factory.list' }"
     />
 
     <CircleSpinner class="mt-5" v-if="contentLoader == true" />

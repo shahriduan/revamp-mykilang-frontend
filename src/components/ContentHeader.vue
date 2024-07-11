@@ -44,10 +44,10 @@ const props = defineProps({
     <x-content-header 
         title="My title"
         :breadcrumbs="[
-            { route: { name: 'client_account.index'}, name: 'Client Accounts' }, 
-            { route: { name: 'client_account.license_key.index', params: { company: $route.params.company }, query: { name: $route.query.name } }, name: $route.query.name + ' Licenses' }, 
+            { route: { name: 'console:client_account.index'}, name: 'Client Accounts' }, 
+            { route: { name: 'console:client_account.license_key.index', params: { company: $route.params.company }, query: { name: $route.query.name } }, name: $route.query.name + ' Licenses' }, 
             { name: $route.params.action == 'create' ? 'New License Key' : 'Edit License Key' }
         ]"
-        :previous-route="{ name: 'client_account.license_key.index', params: { company: $route.params.company }, query: { name: $route.query.name } }"
+        :previous-route="{ name: 'console:client_account.license_key.index', params: { company: $route.params.company }, query: { name: $route.query.name } }"
     />
  -->

@@ -5,8 +5,8 @@
 
     <x-content-header v-if="authStore.userProfile.user_type == ConstantConfig.userType.hq"
         title="Licenses"
-        :breadcrumbs="[{ route: { name: 'client_account.index'}, name: 'Client Account List' }, { name: $route.query.name + ' Licenses' }]"
-        :previous-route="{ name: 'client_account.index' }"
+        :breadcrumbs="[{ route: { name: 'console:client_account.index'}, name: 'Client Account List' }, { name: $route.query.name + ' Licenses' }]"
+        :previous-route="{ name: 'console:client_account.index' }"
     />
 
     <LicenseKeyListPlaceholder v-if="contentLoader == true" />
@@ -122,7 +122,7 @@ function copyLicenseKey(license_id, license_key) {
 }
 
 function createNewLicenseKey() {
-    router.push({ name: 'client_account.license_key.form', params: { company: currentRoute.params.company, action: 'create'  }, query: { name: currentRoute.query.name } })
+    router.push({ name: 'console:client_account.license_key.form', params: { company: currentRoute.params.company, action: 'create'  }, query: { name: currentRoute.query.name } })
 }
 
 async function getCompanyLicenses() {

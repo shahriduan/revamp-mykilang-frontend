@@ -9,7 +9,7 @@
     <CircleSpinner class="mt-5" v-if="loader === true" />
     <div class="row mt-1 gy-4" v-if="loader === false">
         <div class="col-sm-6 col-lg-6 col-xl-4" v-show="$can('role.add')">
-            <router-link :to="{ name: 'role.form', params: { action: 'create' }}" style="text-decoration: none;">
+            <router-link :to="{ name: 'console:role.form', params: { action: 'create' }}" style="text-decoration: none;">
                 <div class="card h-100">
                     <div class="row h-100">
                         <div class="col-5">
@@ -41,7 +41,7 @@
                     <div class="d-flex justify-content-between align-items-end mt-1">
                         <div class="role-heading">
                             <h4 class="mb-1">{{ role.name }}</h4>
-                            <router-link :to="{ name: 'role.form', params: { action: 'edit', 'role': role.id } }" v-show="$can('role.edit')">
+                            <router-link :to="{ name: 'console:role.form', params: { action: 'edit', 'role': role.id } }" v-show="$can('role.edit')">
                                 <span>Edit Permissions</span>
                             </router-link>
                             <span class="mx-1" v-show="role.users_count == 0 && $can('role.delete')">|</span>

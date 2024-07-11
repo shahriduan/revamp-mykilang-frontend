@@ -17,7 +17,7 @@ onMounted(() => {
     authStore.storeAuth(currentRoute.query.token)
     
     setTimeout(() => {
-        router.replace({ name: 'system_start' })
+        router.replace({ name: 'console:system_start' })
     }, 1000);
 })
 </script>

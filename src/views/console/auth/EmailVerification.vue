@@ -23,7 +23,7 @@ const currentRoute = useRoute()
 onMounted(() => {
     if (currentRoute.query.status == 'ok') {
         setTimeout(() => {
-            router.replace({ name: 'account.change_email' })
+            router.replace({ name: 'console:account.change_email' })
         }, 1500);
     }
 })

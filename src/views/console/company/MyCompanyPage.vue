@@ -56,7 +56,7 @@
                 <div class="ms-4 mt-2 mt-md-0" :class="{ 'placeholder-wave': loader }">
                     <div class="d-flex flex-row justify-content-between mb-2">
                         <h4 class="fw-bold" :class="{ 'placeholder col-6': loader}">{{ companies.name }}</h4>
-                        <router-link :to="{ name: 'client_account.form', params: { action: 'edit', company: companyId } }" class="btn btn-outline-dark" v-if="$can('client_account.edit')">
+                        <router-link :to="{ name: 'console:client_account.form', params: { action: 'edit', company: companyId } }" class="btn btn-outline-dark" v-if="$can('client_account.edit')">
                             <i class="fa-solid fa-pencil me-1"></i> Edit
                         </router-link>
                     </div>
@@ -113,7 +113,7 @@
 
     <div class="row mt-1 gy-3 mb-1" v-if="loader == false">
         <div class="col-sm-6 col-xl-6" v-for="subsidiary in subsidiaries" :key="subsidiary.id">
-            <router-link :to="{ name: 'subsidiary.form', params: { action: 'edit', subsidiary: subsidiary.id  } }" style="text-decoration: none;">
+            <router-link :to="{ name: 'console:subsidiary.form', params: { action: 'edit', subsidiary: subsidiary.id  } }" style="text-decoration: none;">
                 <div class="card h-100">
                     <div class="card-body">
                         <div class="row">
@@ -129,7 +129,7 @@
             </router-link>
         </div>
         <div class="col-sm-6 col-xl-6" v-if="$can('company.manage_subsidiary')">
-            <router-link :to="{ name: 'subsidiary.form', params: { action: 'create' } }" style="text-decoration: none;">
+            <router-link :to="{ name: 'console:subsidiary.form', params: { action: 'create' } }" style="text-decoration: none;">
                 <div class="card h-100">
                     <div class="card-body">
                         <div class="row h-100">

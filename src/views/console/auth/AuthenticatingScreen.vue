@@ -31,7 +31,7 @@ onMounted(() => {
 
         setTimeout(() => {
             if (userData.user_type == ConstantConfig.userType.hq) {
-                router.replace({ name: 'home' }) // Platform owner home page
+                router.replace({ name: 'backoffice:home' }) // Platform owner home page
             } else {
                 router.replace({ name: 'console_home' }) // Client home page
             }

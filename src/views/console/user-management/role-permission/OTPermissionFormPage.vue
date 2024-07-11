@@ -6,7 +6,7 @@
             <h3 v-else>Edit roles and permissions</h3>
         </div>
         <div class="col-12 col-sm-3 text-end">
-            <BackButton :route="{ name: 'ot_role.index' }" />
+            <BackButton :route="{ name: 'console:ot_role.index' }" />
         </div>
     </div>
     <CircleSpinner class="mt-5" v-if="loader == true" />
