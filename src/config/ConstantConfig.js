@@ -24,7 +24,7 @@ export default class ConstantConfig {
     static get moduleCode() {
         return {
             oee: 'OEE',
-            apiw: 'APW',
+            spc: 'SPC',
         }
     }
 

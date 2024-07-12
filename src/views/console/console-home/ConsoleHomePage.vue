@@ -201,19 +201,8 @@ async function moduleRedirect(url, isSubscribed = false, haveWebAppAccess = fals
 
     if (isSubscribed == true) {
         if (haveWebAppAccess == true) {
-            var auth_url = url + '?module=' + moduleCode + '&token=' + token + '&theme=' + theme + '&userProfile=' + user_profile
-
-            await window.axios.post(apiRoute({ name: 'api:update_auth_module' }), {
-                    current_domain: moduleDomain
-                })
-                .then(function(response) {
-                    if (response.data.status == true) {
-                        window.location.href = auth_url // Redirect to other module domain
-                    }
-                })
-                .catch(function(error) {
-                    snackbar('Unexpected error: Unable redirect access module')
-                })
+            var auth_url = 'initialize-module' + '?module=' + moduleCode
+            window.location.href = auth_url // Redirect to other module domain
         } else {
             router.push({ name: url.name, query: { module: url.query.module } }) // Redirect to cannot access module from web app platform page
         }

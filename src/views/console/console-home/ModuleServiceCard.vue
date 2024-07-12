@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <p class="fs--1 mb-0">{{ description }}</p>
+                    <p class="fs--1 mb-0 text-justify">{{ description }}</p>
                 </div>
             </div>
         </div>

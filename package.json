@@ -9,11 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fullcalendar/daygrid": "^6.1.14",
+    "@fullcalendar/interaction": "^6.1.14",
+    "@fullcalendar/vue3": "^6.1.14",
     "@vueuse/core": "^10.11.0",
     "animate.css": "^4.1.1",
     "axios": "^1.7.2",
+    "countup.js": "^2.8.0",
     "crypto-js": "^4.2.0",
     "dayjs": "^1.11.11",
+    "echarts": "^5.5.1",
     "flatpickr": "^4.6.13",
     "js-loading-overlay": "^1.2.0",
     "laravel-vue-pagination": "^4.1.3",

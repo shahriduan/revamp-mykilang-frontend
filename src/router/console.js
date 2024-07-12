@@ -49,6 +49,11 @@ export default [
                 name: 'console:system_start',
             },
             {
+                path: '/initialize-module',
+                component: () => import('@/views/console/auth/InitializeModuleScreen.vue'),
+                name: 'console:start_module',
+            },
+            {
                 path: '/logout',
                 component: () => import('@/views/console/auth/LogoutScreen.vue'),
                 name: 'console:logout',

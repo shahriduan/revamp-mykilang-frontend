@@ -43,7 +43,7 @@ export const useAuthStore = defineStore('authStore', () => {
 
     function storeCurrentModule(moduleCode) {
         currentModule.value = moduleCode
-        localStorage.setItem(ConstantHelper.localStorageKey.currentModule, moduleCode)
+        localStorage.setItem(key.currentModule, moduleCode)
     }
 
     return {

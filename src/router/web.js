@@ -2,13 +2,16 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '@/stores/AuthStore'
 import NotFoundPage from '@/views/NotFoundPage.vue'
 import consoleRoute from '@/router/console'
+import supplyChainRoute from '@/router/supply-chain'
+import ConstantConfig from '@/config/ConstantConfig'
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         { path: '/:pathMatch(.*)*', component: NotFoundPage, name: 'not_found' },
         { path: '/offline', component: () => import('@/views/OfflinePage.vue'), name: 'offline' },
-        ...consoleRoute
+        ...consoleRoute,
+        ...supplyChainRoute
     ]
 })
 
@@ -26,7 +29,7 @@ router.beforeEach(async (to, from, next) => {
         useStore.removeAuth()
         next({ name: 'login' })
     } else if (to.meta.auth == false && localStorageToken != undefined) {
-        if (useStore.userProfile.user_type == ConstantHelper.userType.hq) {
+        if (useStore.userProfile.user_type == ConstantConfig.userType.hq) {
             next({ name: 'backoffice:home' }) // Platform owner home page
         } else {
             next({ name: 'console_home' }) // Client home page
