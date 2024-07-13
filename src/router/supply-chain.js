@@ -10,27 +10,27 @@ export default [
             {
                 path: 'dashboard',
                 component: () => import('@/views/supply-chain/MainDashboardPage.vue'),
-                name: 'apiw.dashboard'
+                name: 'spc:dashboard'
             },
             {
                 path: 'warehouse',
                 component: () => import('@/views/supply-chain/warehouse/WarehousePage.vue'),
-                name: 'apiw.warehouse'
+                name: 'spc:warehouse'
             },
             {
                 path: 'production',
                 component: () => import('@/views/supply-chain/production/ProductionPage.vue'),
-                name: 'apiw.production'
+                name: 'spc:production'
             },
             {
                 path: 'asset',
                 component: () => import('@/views/supply-chain/asset/AssetPage.vue'),
-                name: 'apiw.asset'
+                name: 'spc:asset'
             },
             {
                 path: 'inventory',
                 component: () => import('@/views/supply-chain/inventory/InventoryPage.vue'),
-                name: 'apiw.inventory'
+                name: 'spc:inventory'
             }
         ]
     }

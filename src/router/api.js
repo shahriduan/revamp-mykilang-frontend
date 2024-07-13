@@ -8,6 +8,8 @@ const apiRoute = createRouter({
             meta: { domain: AppConfig.consoleDomain },
             path: '/api',
             children: [
+                /* CONSOLE */
+                // Auth
                 { path: 'authenticate', name: 'api:auth' },
                 { path: 'update-auth-module', name: 'api:update_auth_module' },
                 { path: 'socialite-auth/redirect/:provider', name: 'api:socialite_auth_redirect' },
@@ -108,6 +110,51 @@ const apiRoute = createRouter({
                 //User Session
                 { path: 'access-token/get-all-active-sessions', name: 'api:user_session.user_active_session_list' },
                 { path: 'access-token/kill-sessions', name: 'api:user_session.submit_terminate_active_user' },
+                /* CONSOLE */
+            ]
+        },
+        {
+            meta: { domain: AppConfig.moduleDomain },
+            path: '/api',  
+            children: [
+                /* OEE MODULE */
+                // Access data
+                { path: 'user-access/get-user-production-line', name: 'api:user_access.production_line_list' },
+                { path: 'user-access/get-user-part', name: 'api:user_access.part_list' },
+                { path: 'user-access/get-user-shift', name: 'api:user_access.shift_list' },
+                { path: 'user-access/get-user-machine', name: 'api:user_access.machine_list' },
+
+                // Static dashboard
+                { path: 'oee/static-dashboard/get-multisite-oee', name: 'api_oee:default_dashboard.dashboard_oee' },
+                { path: 'oee/static-dashboard/get-oee-indicator', name: 'api_oee:default_dashboard.production_line_oee' },
+                { path: 'oee/static-dashboard/get-effectiveness-chart', name: 'api_oee:default_dashboard.effectiveness_chart' },
+                { path: 'oee/static-dashboard/get-factory-timeline', name: 'api_oee:default_dashboard.factory_timeline' },
+                { path: 'oee/static-dashboard/get-batch-oee', name: 'api_oee:default_dashboard.batch_oee' },
+
+                // Dynamic dashboard
+                { path: 'oee/dynamic-dashboard/get-dashboards', name: 'api_oee:user_dashboard.list_dashboards' },
+                { path: 'oee/dynamic-dashboard/get-dashboard/:dashboardUuid', name: 'api_oee:user_dashboard.dashboard_details' },
+                { path: 'oee/dynamic-dashboard/submit-dashboard/:dashboardUuid?', name: 'api_oee:user_dashboard.submit' },
+                { path: 'oee/dynamic-dashboard/delete-dashboard/:dashboardUuid?', name: 'api_oee:user_dashboard.delete' },
+                { path: 'oee/dynamic-dashboard/get-dashboard-widgets/:dashboardUuid', name: 'api_oee:user_dashboard.get_dashboard_widgets' },
+                { path: 'oee/dynamic-dashboard/submit-dashboard-widget/:dashboardUuid/:dashboardWidget?', name: 'api_oee:user_dashboard.submit_dashboard_widget' },
+                { path: 'oee/dynamic-dashboard/delete-dashboard-widget/:dashboardWidget', name: 'api_oee:user_dashboard.delete_dashboard_widget' },
+                { path: 'oee/dynamic-dashboard/reorder-widget/:dashboardWidget', name: 'api_oee:user_dashboard.reorder_widget' },
+                { path: 'oee/dynamic-dashboard/change-widget-date/:dashboardWidget', name: 'api_oee:user_dashboard.change_widget_date' },
+
+                // Realtime dashboard
+                { path: 'oee/realtime-dashboard/raw-oee', name: 'api_oee:raw_oee' },
+                { path: 'oee/realtime-dashboard/live-operation', name: 'api_oee:live_operation' },
+
+                { path: 'oee/widget/widget-types', name: 'api_oee:user_dashboard.widget_types' },
+                /* OEE MODULE */
+
+                /* SUPPLY CHAIN MODULE */
+                { path: 'basic-module/get-assets', name: 'api_spc:get_assets' },
+                { path: 'basic-module/get-inventories', name: 'api_spc:get_inventories' },
+                { path: 'basic-module/get-productions', name: 'api_spc:get_productions' },
+                { path: 'basic-module/get-warehouse-stocks', name: 'api_spc:get_warehouse_stocks' },
+                /* SUPPLY CHAIN MODULE */
             ]
         }
     ]

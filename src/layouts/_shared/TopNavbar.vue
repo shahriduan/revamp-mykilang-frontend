@@ -13,6 +13,7 @@
         </a>
 
         <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
+            <GoToModuleDropdownList v-if="$route.meta.moduleCode" />
             <li class="nav-item dropdown">
                 <a class="nav-link pe-0 ps-2" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="avatar avatar-xl">
@@ -36,4 +37,5 @@
 
 <script setup>
 import AppConfig from '@/config/AppConfig'
+import GoToModuleDropdownList from '@/layouts/_shared/GoToModuleDropdownList.vue'
 </script>

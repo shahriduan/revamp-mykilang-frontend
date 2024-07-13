@@ -49,9 +49,6 @@
             </div>
         </div>
     </div>
-
-    <CircleSpinner class="mt-5" v-if="contentLoader == true"/>
-
     <ul class="list-group mt-4">
         <li class="list-group-item d-flex flex-column flex-md-row justify-content-md-between align-items-md-center" v-for="holiday in holidays" v-bind:key="holiday.id">
             <div>

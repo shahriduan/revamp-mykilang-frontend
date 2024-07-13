@@ -213,7 +213,7 @@ async function showFactoryModal() {
 }
 
 async function getFactories() {
-    await window.axios.get(apiRoute({ name: 'api_base:factory.list' }))
+    await window.axios.get(apiRoute({ name: 'api:factory.list' }))
         .then(function(response) {
             listFactories.value = response.data.data
 
@@ -243,7 +243,7 @@ async function applyFilter() {
 
 async function getProductions() {
     await window.axios.get(apiRoute({ 
-        name: 'api:basic_module.get_productions', 
+        name: 'api_spc:get_productions', 
         query: { 
             factory: selectedFactories.value.toString(),
             month: monthYear.value,

@@ -185,7 +185,7 @@ onMounted(async () => {
 
 const getAssets = async (page = 1) => {
     try {
-        const response = await window.axios.get(apiRoute({ name : 'api:basic_module.get_assets', query: { factory: factoryId.value, search: search.value, page: page } }))
+        const response = await window.axios.get(apiRoute({ name : 'api_spc:get_assets', query: { factory: factoryId.value, search: search.value, page: page } }))
 
         if (response.data.status == true) {
             assetsData.value = response.data.data
@@ -208,7 +208,7 @@ const getAssets = async (page = 1) => {
 
 async function getFactories() {
     try {
-        const response = await window.axios.get(apiRoute({ name: 'api_base:factory.list' }))
+        const response = await window.axios.get(apiRoute({ name: 'api:factory.list' }))
 
         if (response.data.status == true) {
             factoriesData.value = response.data.data

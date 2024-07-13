@@ -30,13 +30,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3" v-for="platformModule in displayModules" v-if="contentLoader == false">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3" v-for="platformModule in displayModules" v-if="contentLoader == false">
                 <ModuleServiceCard
                     :module-name="platformModule.module_name"
                     module-package="Starter Package"
                     :is-subscribed="platformModule.is_subscribed == 1 ? true : false"
                     :description="platformModule.description"
-                    @click="moduleRedirect(platformModule.redirect_url, platformModule.is_subscribed == 1 ? true : false, platformModule.web_app_access, AppConfig.moduleDomain, platformModule.code)"
+                    @click="moduleRedirect(platformModule.redirect_url, platformModule.is_subscribed == 1 ? true : false, platformModule.web_app_access, platformModule.code)"
                 />
             </div>
         </div>
@@ -128,18 +128,13 @@
 
 <script setup>
 import { onMounted, ref } from 'vue'
-import { useAuthStore } from '@/stores/AuthStore'
 import { axiosGetModuleList } from '@/helpers/AxiosApiHelper'
-import { loadingOverlay } from '@/components/LoadingOverlay'
-import { snackbar } from '@/components/Snackbar'
 import { useRouter } from 'vue-router'
+import webRouter from '@/router/web'
 import apiRoute from '@/helpers/ApiHelper'
-import AppConfig from '@/config/AppConfig'
-import ConstantConfig from '@/config/ConstantConfig'
 import ModuleServiceCard from '@/views/console/console-home/ModuleServiceCard.vue'
 
 const router = useRouter()
-const authStore = useAuthStore()
 
 const contentLoader = ref(true)
 
@@ -157,7 +152,7 @@ onMounted(async () => {
 
             if (item['is_subscribed'] == 1) {
                 if (item.web_app_access == true) {
-                    var redirect_url = AppConfig.moduleDomain + item.main_landing_url
+                    var redirect_url = webRouter.resolve({ name: 'console:start_module' }).fullPath + '?module=' + item.code
                 } else {
                     var redirect_url = router.resolve({ name: 'console:platform_not_available', query: { module: item.module_name } })
                 }
@@ -193,16 +188,10 @@ async function getSubscribedModules() {
         })
 }
 
-async function moduleRedirect(url, isSubscribed = false, haveWebAppAccess = false, moduleDomain, moduleCode) {
-    // Pass local storage data to module
-    var user_profile = localStorage.getItem(ConstantConfig.localStorageKey.userProfile)
-    var token = authStore.token
-    var theme = localStorage.getItem(ConstantConfig.localStorageKey.theme)
-
+async function moduleRedirect(url, isSubscribed = false, haveWebAppAccess = false, moduleCode) {
     if (isSubscribed == true) {
         if (haveWebAppAccess == true) {
-            var auth_url = 'initialize-module' + '?module=' + moduleCode
-            window.location.href = auth_url // Redirect to other module domain
+            window.location.href = url // Redirect to module
         } else {
             router.push({ name: url.name, query: { module: url.query.module } }) // Redirect to cannot access module from web app platform page
         }

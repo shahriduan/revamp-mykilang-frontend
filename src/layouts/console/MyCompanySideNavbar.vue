@@ -44,7 +44,7 @@
                             </div>
                         </router-link>
 
-                        <router-link class="nav-link sidebar-menu" :class="{ active: ['license_key.index'].includes($route.name) }" :to="{ name: 'console:license_key.index' }" role="button">
+                        <router-link class="nav-link sidebar-menu" :class="{ active: ['console:license_key.index'].includes($route.name) }" :to="{ name: 'console:license_key.index' }" role="button">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="fas fa-clipboard-check"></span>
@@ -53,14 +53,14 @@
                             </div>
                         </router-link>
                         
-                        <router-link class="nav-link sidebar-menu" :class="{ active: 'working-days'.includes($route.name) }" :to="{ name: 'console:working_days' }" role="button">
+                        <!-- <router-link class="nav-link sidebar-menu" :class="{ active: 'working-days'.includes($route.name) }" :to="{ name: 'console:working_days' }" role="button">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="bi bi-tools"></span>
                                 </span>
                                 <span class="nav-link-text ps-1">Settings</span>
                             </div>
-                        </router-link>
+                        </router-link> -->
                     </li>
                 </ul>
             </div>

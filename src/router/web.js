@@ -3,6 +3,7 @@ import { useAuthStore } from '@/stores/AuthStore'
 import NotFoundPage from '@/views/NotFoundPage.vue'
 import consoleRoute from '@/router/console'
 import supplyChainRoute from '@/router/supply-chain'
+import oeeRoute from '@/router/oee'
 import ConstantConfig from '@/config/ConstantConfig'
 
 const router = createRouter({
@@ -11,7 +12,8 @@ const router = createRouter({
         { path: '/:pathMatch(.*)*', component: NotFoundPage, name: 'not_found' },
         { path: '/offline', component: () => import('@/views/OfflinePage.vue'), name: 'offline' },
         ...consoleRoute,
-        ...supplyChainRoute
+        ...supplyChainRoute,
+        ...oeeRoute
     ]
 })
 

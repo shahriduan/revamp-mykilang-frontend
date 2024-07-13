@@ -29,7 +29,10 @@
                     <UserManualButton :manual-link="vsysLinx.user_manual" :software-name="vsysLinx.name" class="mt-1" />
                 </div>
                 <div class="card-body pt-0">
-                    {{ vsysLinx.description }}
+                    <h5>Notes :</h5>
+                    <div class="bg-dark rounded-2 text-white py-1 px-2">
+                        {{ vsysLinx.description }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -46,7 +49,10 @@
                     <UserManualButton :manual-link="vsysMykilang.user_manual" :software-name="vsysMykilang.name" class="mt-1" />
                 </div>
                 <div class="card-body pt-0">
-                    {{ vsysMykilang.description }}
+                    <h5>Notes :</h5>
+                    <div class="bg-dark rounded-2 text-white py-1 px-2">
+                        {{ vsysMykilang.description }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -63,7 +69,10 @@
                     <UserManualButton :manual-link="vsysDrs.user_manual" :software-name="vsysDrs.name" class="mt-1" />
                 </div>
                 <div class="card-body pt-0">
-                    {{ vsysDrs.description }}
+                    <h5>Notes :</h5>
+                    <div class="bg-dark rounded-2 text-white py-1 px-2">
+                        {{ vsysDrs.description }}
+                    </div>
                 </div>
             </div>
         </div>

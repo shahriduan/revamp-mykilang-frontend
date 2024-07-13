@@ -162,7 +162,7 @@ const submitLoader = ref(false)
 const responseStatus = ref(false)
 
 const form = reactive({
-    logo: { model: '', error: [] },
+    logo: { model: null, error: [] },
 })
 
 onMounted(async () => {

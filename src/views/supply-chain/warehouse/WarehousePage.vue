@@ -163,7 +163,7 @@ async function applyFilter() {
 }
 
 async function getFactories() {
-    await window.axios.get(apiRoute({ name: 'api_base:factory.list' }))
+    await window.axios.get(apiRoute({ name: 'api:factory.list' }))
         .then(function(response) {
             listFactories.value = response.data.data
 
@@ -175,7 +175,7 @@ async function getFactories() {
 }
 
 async function getWarehouses() {
-    await window.axios.get(apiRoute({ name: 'api:basic_module.get_warehouse_stocks', query: { factory: selectedFactoryId.value } }))
+    await window.axios.get(apiRoute({ name: 'api_spc:get_warehouse_stocks', query: { factory: selectedFactoryId.value } }))
     .then(function (response) {
         warehouseData.value = response.data.data
     })

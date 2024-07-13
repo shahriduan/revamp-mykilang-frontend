@@ -22,32 +22,32 @@
                             <NavbarVerticalDivider>Supply Chain</NavbarVerticalDivider>
                         </div>
                         <SidebarNavLink 
-                            :is-active-nav="['apiw.dashboard'].includes($route.name)" 
-                            :route-name="{ name: 'apiw.dashboard' }" 
+                            :is-active-nav="['spc:dashboard'].includes($route.name)" 
+                            :route-name="{ name: 'spc:dashboard' }" 
                             title="Main Menu">
                             <i class="bi bi-house-fill"></i>
                         </SidebarNavLink>
                         <SidebarNavLink 
-                            :is-active-nav="['apiw.warehouse'].includes($route.name)" 
-                            :route-name="{ name: 'apiw.warehouse' }" 
+                            :is-active-nav="['spc:warehouse'].includes($route.name)" 
+                            :route-name="{ name: 'spc:warehouse' }" 
                             title="Warehouse">
                             <i class="bi bi-buildings-fill"></i>
                         </SidebarNavLink>
                         <SidebarNavLink 
-                            :is-active-nav="['apiw.production'].includes($route.name)" 
-                            :route-name="{ name: 'apiw.production' }" 
+                            :is-active-nav="['spc:production'].includes($route.name)" 
+                            :route-name="{ name: 'spc:production' }" 
                             title="Production">
                             <i class="bi bi-calendar-week"></i>
                         </SidebarNavLink>
                         <SidebarNavLink 
-                            :is-active-nav="['apiw.asset'].includes($route.name)" 
-                            :route-name="{ name: 'apiw.asset' }" 
+                            :is-active-nav="['spc:asset'].includes($route.name)" 
+                            :route-name="{ name: 'spc:asset' }" 
                             title="Asset">
                             <i class="bi bi-table"></i>
                         </SidebarNavLink>
                         <SidebarNavLink 
-                            :is-active-nav="['apiw.inventory'].includes($route.name)" 
-                            :route-name="{ name: 'apiw.inventory' }" 
+                            :is-active-nav="['spc:inventory'].includes($route.name)" 
+                            :route-name="{ name: 'spc:inventory' }" 
                             title="Inventory">
                             <i class="bi bi-file-earmark-spreadsheet-fill"></i>
                         </SidebarNavLink>

@@ -7,7 +7,7 @@
 
     <div class="row g-3 mt-1">
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 mb-2 text-center">
-            <router-link :to="{ name:'apiw.warehouse' }" style="text-decoration: none;">
+            <router-link :to="{ name:'spc:warehouse' }" style="text-decoration: none;">
             <div class="card border shadow-none h-100">
                 <div class="card-img-top m-0">
                     <img class="img-medium" src="/img/supply-chain/warehouse.png" style="width: 50%; height: auto" />
@@ -19,7 +19,7 @@
             </router-link>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 mb-2 text-center">
-            <router-link :to="{ name: 'apiw.production' }" style="text-decoration: none;">
+            <router-link :to="{ name: 'spc:production' }" style="text-decoration: none;">
             <div class="card border shadow-none h-100">
                 <div class="card-img-top m-0">
                     <img class="img-fluid" src="/img/supply-chain/production.png" style="width: 50%; height: auto" />
@@ -31,7 +31,7 @@
             </router-link>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 mb-2 text-center">
-            <router-link :to="{ name: 'apiw.asset' }" style="text-decoration: none;">
+            <router-link :to="{ name: 'spc:asset' }" style="text-decoration: none;">
             <div class="card border shadow-none h-100">
                 <div class="card-img-top m-0">
                     <img class="img-fluid" src="/img/supply-chain/asset.png" style="width: 50%; height: auto" />
@@ -43,7 +43,7 @@
             </router-link>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 mb-2 text-center">
-            <router-link :to="{ name: 'apiw.inventory' }" style="text-decoration: none;">
+            <router-link :to="{ name: 'spc:inventory' }" style="text-decoration: none;">
             <div class="card border shadow-none h-100">
                 <div class="card-img-top m-0">
                     <img class="img-fluid" src="/img/supply-chain/inventory.png" style="width: 50%; height: auto" />

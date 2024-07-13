@@ -34,22 +34,24 @@
                         <div v-if="otherDevices.length > 0">
                             <h4 class="mt-2">Logins on other devices</h4>
                             <ul class="list-group list-group-light">
-                                <li class="list-group-item d-flex justify-content-between align-items-center" v-for="otherDevice in otherDevices">
-                                    <div class="ms-3">
-                                        <p class="fw-bold mb-0">{{ otherDevice.user_agent }}</p>
-                                        <p class="text-muted mb-0">
-                                            Coordinate:
-                                            <a :href="otherDevice.link" v-if="otherDevice.coordinate != 'Unknown'" target="_blank">
-                                                {{ otherDevice.coordinate }}
-                                            </a>
-                                            <span v-else>{{ otherDevice.coordinate }}</span>
-                                        </p>
-                                        <p class="text-muted mb-0">{{ otherDevice.last_active }}</p>
-                                    </div>
-                                    <a class="btn btn-falcon-danger btn-sm" href="javascript:;" @click="terminateSession(otherDevice.id)">
-                                        Terminate
-                                    </a>
-                                </li>
+                                <TransitionGroup name="fade">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center" v-for="otherDevice in otherDevices" :key="otherDevice">
+                                        <div class="ms-3">
+                                            <p class="fw-bold mb-0">{{ otherDevice.user_agent }}</p>
+                                            <p class="text-muted mb-0">
+                                                Coordinate:
+                                                <a :href="otherDevice.link" v-if="otherDevice.coordinate != 'Unknown'" target="_blank">
+                                                    {{ otherDevice.coordinate }}
+                                                </a>
+                                                <span v-else>{{ otherDevice.coordinate }}</span>
+                                            </p>
+                                            <p class="text-muted mb-0">{{ otherDevice.last_active }}</p>
+                                        </div>
+                                        <a class="btn btn-falcon-danger btn-sm" href="javascript:;" @click="terminateSession(otherDevice)">
+                                            Terminate
+                                        </a>
+                                    </li>
+                                </TransitionGroup>
                             </ul>
                         </div>
                     </div>
@@ -114,15 +116,26 @@ function readableCoordinate(data) {
     return data
 }
 
-async function terminateSession(token_id) {
+async function terminateSession(device) {
+    const i = otherDevices.value.indexOf(device)
+    if (i > -1) {
+        otherDevices.value.splice(i, 1)
+    }
     await window.axios.post(apiRoute({ name: 'api:account.terminate_session' }), {
-            token_id: token_id
-        })
-        .then(function(response) {
-            getActiveSessions(false)
+            token_id: device.id
         })
         .catch(function(error) {
             snackbar('Unexpected error: Unable to terminate session')
         })
 }
 </script>
+
+<style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s, transform 0.5s;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+  transform: translate(30px, 0);
+}
+</style>
