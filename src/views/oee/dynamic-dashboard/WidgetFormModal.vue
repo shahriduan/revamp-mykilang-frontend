@@ -218,11 +218,14 @@ watch(modalIsOpen, (newModalIsOpen) => {
         setTimeout(() => { 
             setDefaultWidgetWhenEdit()
         }, 250)
-    } else {
+    } 
+
+    if (modalIsOpen.value == 'add') {
         setTimeout(() => { 
             setDefaultWidgetWhenAdd()
         }, 250)
     }
+    console.log(modalIsOpen.value)
 })
 
 const onCloseModal = () => {

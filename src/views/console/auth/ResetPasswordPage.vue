@@ -54,6 +54,8 @@ const loader = ref(false)
 const token = ref(currentRoute.params.token)
 const email = ref(currentRoute.query.email)
 
+// TODO|Low: beforemount check token validity
+
 async function submit() {
     loader.value = true
 

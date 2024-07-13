@@ -29,7 +29,14 @@ export const useAuthStore = defineStore('authStore', () => {
     }
 
     function removeAuth() {
-        localStorage.clear()
+        for (var i = 0; i < localStorage.length; i++) {
+            // Clear local storage except theme
+            if (localStorage.key(i) == key.theme) {
+                continue
+            }
+            localStorage.removeItem(localStorage.key(i))
+        }
+
         token.value = localStorage.getItem(key.token)
     }
 

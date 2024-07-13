@@ -1,5 +1,5 @@
 <template>
-    <div class="col-12 mb-1 mt-1 p-0 container" v-for="(batch, batchIndex) in props.paginatedData" :key="'batch' + batchIndex">
+    <div class="col-12 mb-1 mt-2 p-0 container" v-for="(batch, batchIndex) in props.paginatedData" :key="'batch' + batchIndex">
         <div v-for="(machine, machineIndex) in batch.machines" :key="'machine' + machineIndex">
             <div class="card border shadow-none h-100">
                 <a class="btn p-0" :data-bs-toggle="'collapse'"
@@ -41,7 +41,7 @@
                             <div v-for="(downtime, downtimeIndex) in batch.downtime" :key="'downtime' + downtimeIndex">
                                 <div class="card border shadow-none rounded-0">
                                     <div class="card-body p-2">
-                                        <div><strong>Donwtime Type Name:</strong> {{ downtime.downtime_type_name }}</div>
+                                        <div><strong>Downtime Type Name:</strong> {{ downtime.downtime_type_name }}</div>
                                         <div><strong>Downtime Problem Name:</strong> {{ downtime.downtime_problem_name }}</div>
                                         <div><strong>Machine Name:</strong> {{ downtime.machine_name }}</div>
                                         <div><strong>Start Time:</strong> {{ formatDate(downtime.start) }}</div>

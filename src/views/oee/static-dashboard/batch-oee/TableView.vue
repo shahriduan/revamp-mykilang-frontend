@@ -61,7 +61,7 @@
                                         <template v-for="(downtime, downtimeIndex) in batch.downtime" :key="'downtime' + downtimeIndex">
                                             <div class="card border shadow-none m-2" style="min-width: 250px; max-width: 300px;">
                                                 <div class="card-body text-start">
-                                                    <div><strong>Donwtime Type Name:</strong> {{ downtime.downtime_type_name }}</div>
+                                                    <div><strong>Downtime Type Name:</strong> {{ downtime.downtime_type_name }}</div>
                                                     <div><strong>Downtime Problem Name:</strong> {{ downtime.downtime_problem_name }}</div>
                                                     <div><strong>Machine Name:</strong> {{ downtime.machine_name }}</div>
                                                     <div><strong>Start Time:</strong> {{ formatDate(downtime.start) }}</div>

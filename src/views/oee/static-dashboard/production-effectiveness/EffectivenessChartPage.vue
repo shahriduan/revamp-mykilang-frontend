@@ -1,6 +1,6 @@
 <template>
     <PageHeaderTitle>
-        <h5>Production Effectiveness</h5>
+        <h5>Machine Effectiveness</h5>
     </PageHeaderTitle>
 
     <div class="row mt-2 mb-1 gy-1 gy-sm-0">

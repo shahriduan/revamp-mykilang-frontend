@@ -50,7 +50,7 @@ async function submit() {
             }
         })
         .catch(function(error) {
-            snackbar('Unexpected Error')
+            snackbar('Unexpected Error. Please try again later.')
         })
 
         loader.value = false
