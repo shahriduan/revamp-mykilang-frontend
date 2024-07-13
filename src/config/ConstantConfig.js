@@ -25,6 +25,7 @@ export default class ConstantConfig {
         return {
             oee: 'OEE',
             spc: 'SPC',
+            asm: 'ASM'
         }
     }
 

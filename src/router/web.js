@@ -4,6 +4,7 @@ import NotFoundPage from '@/views/NotFoundPage.vue'
 import consoleRoute from '@/router/console'
 import supplyChainRoute from '@/router/supply-chain'
 import oeeRoute from '@/router/oee'
+import assetMonitoringRoute from '@/router/asset-monitoring'
 import ConstantConfig from '@/config/ConstantConfig'
 
 const router = createRouter({
@@ -13,7 +14,8 @@ const router = createRouter({
         { path: '/offline', component: () => import('@/views/OfflinePage.vue'), name: 'offline' },
         ...consoleRoute,
         ...supplyChainRoute,
-        ...oeeRoute
+        ...oeeRoute,
+        ...assetMonitoringRoute
     ]
 })
 

@@ -24,6 +24,8 @@ onMounted(() => {
             router.replace({ name: 'oee.dashboard' })
         } else if (currentRoute.query.module == ConstantConfig.moduleCode.spc) {
             router.replace({ name: 'spc:dashboard' })
+        } else if (currentRoute.query.module == ConstantConfig.moduleCode.asm) {
+            router.replace({ name: 'asm:dashboard' })
         } else {
             router.replace({ name: 'not_found' })
         }

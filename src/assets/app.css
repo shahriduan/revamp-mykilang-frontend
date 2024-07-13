@@ -1,8 +1,10 @@
 [data-bs-theme=light] {
     --mega-check-color: #ffffff;
+    --mega-checkbox-border: 1px solid rgba(4, 32, 69, 0.14);
 }
 [data-bs-theme=dark] {
     --mega-check-color: var(--falcon-emphasis-bg);
+    --mega-checkbox-border: 1px solid rgba(245, 245, 245, 0.5);
 }
 /***** GENERAL *****/
 @font-face {
@@ -110,7 +112,7 @@ h6.horizontal-line-header span.horizontal-line-text#register-company {
     display: inline-block;
     width: 1rem;
     height: 1rem;
-    border: 1px solid rgba(4, 32, 69, 0.14);
+    border: var(--mega-checkbox-border);
     vertical-align: middle;
 }
 .form-selectgroup-input[type=checkbox] + .form-selectgroup-label .form-selectgroup-check {
