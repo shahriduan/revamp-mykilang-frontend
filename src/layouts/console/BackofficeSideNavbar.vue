@@ -82,7 +82,7 @@
                                 <span class="nav-link-text ps-1">Softwares</span>
                             </div>
                         </router-link>
-                        <a class="nav-link" :href="'/developer-logs?t=' + authStore.token" role="button" v-if="authStore.userProfile.username == 'admin'">
+                        <a class="nav-link" :href="AppConfig.consoleDomain + '/developer-logs?t=' + authStore.token" role="button" v-if="authStore.userProfile.username == 'admin'">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-icon">
                                     <span class="fa-solid fa-bug"></span>
