@@ -1,15 +1,12 @@
 <template>
-    <PageHeaderTitle>
-        <h5>Power</h5>
-    </PageHeaderTitle>
+    <MonitoringContentNavPills>
+        <div class="mt-4">
+            Power consumption content here
+        </div>
+    </MonitoringContentNavPills>
 </template>
 
 <script setup>
 import { onMounted, ref } from 'vue'
-import PageHeaderTitle from '@/views/asset-monitoring/_shared/PageHeaderTitle.vue'
-
+import MonitoringContentNavPills from '@/views/asset-monitoring/_shared/MonitoringContentNavPills.vue'
 </script>
-
-<style lang="scss" scoped>
-
-</style>

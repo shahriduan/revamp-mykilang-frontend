@@ -15,7 +15,7 @@
         </a>
         <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end dropdown-menu-card dropdown-caret-bg" aria-labelledby="navbar-dropdown-module-list">
             <div class="card shadow-none">
-                <div class="scrollbar-overlay nine-dots-dropdown" style="height: 13.5rem">
+                <div class="scrollbar-overlay nine-dots-dropdown" style="height: 19.4rem">
                     <div class="card-body px-3">
                         <div class="row text-center gx-0 gy-0">
                             <div class="col-12">

@@ -1,19 +1,12 @@
 <template>
-    <div>
-        <span class="d-flex flex-row">
-            <h4>Dashboard > </h4>
-            <h4 class="text-decoration-underline">Live</h4>
-        </span>
+    <div class="d-flex justify-content-end mt-4 mb-2">
+        <i class="bi bi-arrow-clockwise me-1"></i>Last Update : {{ currentTime }}
     </div>
 
-
-    <div class="mt-2 mb-2">
+    <div class="mb-2">
         <NavbarVerticalDivider>Health Status</NavbarVerticalDivider>
     </div>
 
-    <div class="d-flex justify-content-end">
-        <i class="bi bi-arrow-clockwise"></i>{{ currentTime }}
-    </div>
     <div class="row g-2 mt-1">
         <div class="container scollbar">
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 mb-1 text-center scroll4">
@@ -89,12 +82,10 @@
         </div>
     </div>
 
-    <div class="mt-1 mb-1">
+    <div class="mt-3 mb-1">
         <NavbarVerticalDivider>Pump Performance</NavbarVerticalDivider>
     </div>
-    <div class="d-flex justify-content-end m-0">
-        <i class="bi bi-arrow-clockwise"></i>{{ currentTime }}
-    </div>
+
     <div class="d-flex justify-content-end mt-1 mb-0">
         <div class="form-check form-check-inline">
             <input class="form-check-input" id="inlineCheckbox1" type="checkbox" value="option1" />
@@ -111,9 +102,9 @@
     </div>
     <div class="row g-1">
         <div class="col-sm-4 col-lg-3">
-            <div class="card border shadow-none bg-transparent text-dark">
+            <div class="card border shadow-none bg-transparent">
                 <div class="card-img-top m-0 text-center">
-                    <img class="img-medium" src="/img/asset-monitoring/blue_pump.png" style="width: 40%; height: auto;" />
+                    <img class="img-medium" src="/img/asset-monitoring/blue_pump.png" style="width: 40%; height: auto" />
                 </div>
                 <div class="card-body p-1">
                     <h5 class="card-title text-center">Pump 1</h5>
@@ -152,27 +143,24 @@
         </div>
         <div class="col-sm-8 col-lg-9">
             <div class="card border shadow-none rounded">
-                <div class="card-body bg-light">
+                <div class="card-body">
                     <label class="form-label" for="customRange1">Power Consumption</label>
                     <input class="form-range" id="customRange1" type="range" />
-                    <div class="echart-line-chart" style="min-height: 300px;" data-echart-responsive="true"
-                        ref="chartPower"></div>
+                    <div class="echart-line-chart" style="min-height: 300px;" data-echart-responsive="true" ref="chartPower"></div>
                 </div>
             </div>
             <div class="card border shadow-none rounded">
-                <div class="card-body bg-light">
+                <div class="card-body">
                     <label class="form-label" for="customRange2">Temperature</label>
                     <input class="form-range" id="customRange2" type="range" />
-                    <div class="echart-line-chart" style="min-height: 300px;" data-echart-responsive="true"
-                        ref="chartTemperature"></div>
+                    <div class="echart-line-chart" style="min-height: 300px;" data-echart-responsive="true" ref="chartTemperature"></div>
                 </div>
             </div>
             <div class="card border shadow-none rounded">
-                <div class="card-body bg-light">
+                <div class="card-body">
                     <label class="form-label" for="customRange3">Vibration</label>
                     <input class="form-range" id="customRange3" type="range" />
-                    <div class="echart-line-chart" style="min-height: 300px;" data-echart-responsive="true"
-                        ref="chartVibration"></div>
+                    <div class="echart-line-chart" style="min-height: 300px;" data-echart-responsive="true" ref="chartVibration"></div>
                 </div>
             </div>
         </div>

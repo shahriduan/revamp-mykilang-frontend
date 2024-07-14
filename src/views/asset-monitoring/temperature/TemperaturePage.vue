@@ -1,78 +1,76 @@
 <template>
-    <PageHeaderTitle>
-        <h5>Temperature</h5>
-    </PageHeaderTitle>
-
-    <div class="row mt-2 gy-2 gy-sm-0">
-        <div class="col-md-3 col-lg-4 col-xxl-6"></div>
-        <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xxl-3 pe-sm-2"></div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xxl-3 ps-sm-2">
-            <input class="form-control datetimepicker" id="datepicker" type="text" v-model="dateFilter"
-                placeholder="Date" />
-        </div>
-    </div>
-
-    <div class="row mt-1 g-1">
-        <div class="card-header py-2 text-end" style="background-color: #152b48;">
-            <div class="col-auto align-self-center">
-                <h6 class="text-center text-white mb-0" style="font-size: 16.4px;">Heatmap</h6>
+    <MonitoringContentNavPills>
+        <div class="row mt-2 gy-2 gy-sm-0">
+            <div class="col-md-3 col-lg-4 col-xxl-6"></div>
+            <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xxl-3 pe-sm-2"></div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xxl-3 ps-sm-2">
+                <input class="form-control datetimepicker" id="datepicker" type="text" v-model="dateFilter"
+                    placeholder="Date" />
             </div>
         </div>
-        <div class="card">
-            <div class="card-body unit">
-                <div class="row g-3">
-                    <div class="col-sm-12">
-                        <div class="d-flex justify-content-center align-items-center noData">
-                            No data for specific date picked
+
+        <div class="row mt-1 g-1">
+            <div class="card-header py-2 text-end" style="background-color: #152b48;">
+                <div class="col-auto align-self-center">
+                    <h6 class="text-center text-white mb-0" style="font-size: 16.4px;">Heatmap</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body unit">
+                    <div class="row g-3">
+                        <div class="col-sm-12">
+                            <div class="d-flex justify-content-center align-items-center noData">
+                                No data for specific date picked
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row mt-1 g-1">
-        <div class="card-header py-2 text-end" style="background-color: #152b48;">
-            <div class="col-auto align-self-center">
-                <h6 class="text-center text-white mb-0" style="font-size: 16.4px;">Trend Temperature</h6>
+        <div class="row mt-1 g-1">
+            <div class="card-header py-2 text-end" style="background-color: #152b48;">
+                <div class="col-auto align-self-center">
+                    <h6 class="text-center text-white mb-0" style="font-size: 16.4px;">Trend Temperature</h6>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="card-body unit">
-                <div class="row g-3">
-                    <div class="col-sm-12">
-                        <div class="d-flex justify-content-center align-items-center noData">
-                            No data for specific date picked
+            <div class="card">
+                <div class="card-body unit">
+                    <div class="row g-3">
+                        <div class="col-sm-12">
+                            <div class="d-flex justify-content-center align-items-center noData">
+                                No data for specific date picked
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row mt-1 g-1">
-        <div class="card-header py-2 text-end" style="background-color: #152b48;">
-            <div class="col-auto align-self-center">
-                <h6 class="text-center text-white mb-0" style="font-size: 16.4px;">History Temperature</h6>
+        <div class="row mt-1 g-1">
+            <div class="card-header py-2 text-end" style="background-color: #152b48;">
+                <div class="col-auto align-self-center">
+                    <h6 class="text-center text-white mb-0" style="font-size: 16.4px;">History Temperature</h6>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="card-body unit">
-                <div class="row g-3">
-                    <div class="col-sm-12">
-                        <div class="d-flex justify-content-center align-items-center noData">
-                            No data for specific date picked
+            <div class="card">
+                <div class="card-body unit">
+                    <div class="row g-3">
+                        <div class="col-sm-12">
+                            <div class="d-flex justify-content-center align-items-center noData">
+                                No data for specific date picked
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </MonitoringContentNavPills>
 </template>
 
 <script setup>
 import { onMounted, ref } from 'vue'
-import PageHeaderTitle from '@/views/asset-monitoring/_shared/PageHeaderTitle.vue'
+import MonitoringContentNavPills from '@/views/asset-monitoring/_shared/MonitoringContentNavPills.vue'
 import flatpickr from 'flatpickr'
 import dayjs from 'dayjs'
 

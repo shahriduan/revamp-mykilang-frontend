@@ -1,15 +1,12 @@
 <template>
-    <PageHeaderTitle>
-        <h5>Vibration</h5>
-    </PageHeaderTitle>
+    <MonitoringContentNavPills>
+        <div class="mt-4">
+            Vibration content here
+        </div>
+    </MonitoringContentNavPills>
 </template>
 
 <script setup>
 import { onMounted, ref } from 'vue'
-import PageHeaderTitle from '@/views/asset-monitoring/_shared/PageHeaderTitle.vue'
-
+import MonitoringContentNavPills from '@/views/asset-monitoring/_shared/MonitoringContentNavPills.vue'
 </script>
-
-<style lang="scss" scoped>
-
-</style>
